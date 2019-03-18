@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.waterualitymonitor.respository.TAmonitoringMapper">
+
+
+    <select id="getOne()" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
+    select *from TAmonitoring order by time limit 1;
+    </select>
+
+    <select id="getTen()" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
+    select *from TAmonitoring order by time limt 0,11;
+    </select>
+<!--
+
+            List<TAmonitoring> getDay();
+    List<TAmonitoring> getMonth();
+    List<TAmonitoring> getWeek();
+
+    -->
+    <select id="getDay()" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
+    select *from TAmonitoring where  day ( time ) = day(now());
+    </select>
+    <select id="getWeek()" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
+    select *from TAmonitoring where  time between #{start} and #{end};
+    </select>
+    <select id="getMonth()" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
+    select *from TAmonitoring where  month ( time ) = month(now());
+    </select>
+
+</mapper>
