@@ -1,11 +1,9 @@
 package com.example.waterualitymonitor.domain;
 
-import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
 
-@Entity
-@Table(name = "Tjc_recording", schema = "WaterWeatherTable", catalog = "")
+
 public class TjcRecording {
     private int jcId;
     private double a1;
@@ -27,8 +25,7 @@ public class TjcRecording {
     private Timestamp jcTime;
     private byte ifWrong;
 
-    @Id
-    @Column(name = "jc_id")
+
     public int getJcId() {
         return jcId;
     }
@@ -37,8 +34,7 @@ public class TjcRecording {
         this.jcId = jcId;
     }
 
-    @Basic
-    @Column(name = "A1")
+
     public double getA1() {
         return a1;
     }
@@ -47,8 +43,6 @@ public class TjcRecording {
         this.a1 = a1;
     }
 
-    @Basic
-    @Column(name = "A3")
     public double getA3() {
         return a3;
     }
@@ -57,8 +51,6 @@ public class TjcRecording {
         this.a3 = a3;
     }
 
-    @Basic
-    @Column(name = "AA10")
     public double getAa10() {
         return aa10;
     }
@@ -67,8 +59,7 @@ public class TjcRecording {
         this.aa10 = aa10;
     }
 
-    @Basic
-    @Column(name = "AA11")
+
     public double getAa11() {
         return aa11;
     }
@@ -77,8 +68,7 @@ public class TjcRecording {
         this.aa11 = aa11;
     }
 
-    @Basic
-    @Column(name = "AA15")
+
     public double getAa15() {
         return aa15;
     }
@@ -87,8 +77,7 @@ public class TjcRecording {
         this.aa15 = aa15;
     }
 
-    @Basic
-    @Column(name = "A60")
+
     public double getA60() {
         return a60;
     }
@@ -97,8 +86,7 @@ public class TjcRecording {
         this.a60 = a60;
     }
 
-    @Basic
-    @Column(name = "A00")
+
     public double getA00() {
         return a00;
     }
@@ -107,8 +95,6 @@ public class TjcRecording {
         this.a00 = a00;
     }
 
-    @Basic
-    @Column(name = "A07")
     public double getA07() {
         return a07;
     }
@@ -117,8 +103,7 @@ public class TjcRecording {
         this.a07 = a07;
     }
 
-    @Basic
-    @Column(name = "A08")
+
     public double getA08() {
         return a08;
     }
@@ -127,8 +112,7 @@ public class TjcRecording {
         this.a08 = a08;
     }
 
-    @Basic
-    @Column(name = "A09")
+
     public double getA09() {
         return a09;
     }
@@ -137,8 +121,7 @@ public class TjcRecording {
         this.a09 = a09;
     }
 
-    @Basic
-    @Column(name = "A10")
+
     public double getA10() {
         return a10;
     }
@@ -147,8 +130,7 @@ public class TjcRecording {
         this.a10 = a10;
     }
 
-    @Basic
-    @Column(name = "A11")
+
     public double getA11() {
         return a11;
     }
@@ -157,8 +139,7 @@ public class TjcRecording {
         this.a11 = a11;
     }
 
-    @Basic
-    @Column(name = "A12")
+
     public double getA12() {
         return a12;
     }
@@ -167,8 +148,7 @@ public class TjcRecording {
         this.a12 = a12;
     }
 
-    @Basic
-    @Column(name = "A13")
+
     public double getA13() {
         return a13;
     }
@@ -177,8 +157,7 @@ public class TjcRecording {
         this.a13 = a13;
     }
 
-    @Basic
-    @Column(name = "A14")
+
     public double getA14() {
         return a14;
     }
@@ -187,8 +166,6 @@ public class TjcRecording {
         this.a14 = a14;
     }
 
-    @Basic
-    @Column(name = "A15")
     public double getA15() {
         return a15;
     }
@@ -197,8 +174,7 @@ public class TjcRecording {
         this.a15 = a15;
     }
 
-    @Basic
-    @Column(name = "jc_time")
+
     public Timestamp getJcTime() {
         return jcTime;
     }
@@ -207,8 +183,7 @@ public class TjcRecording {
         this.jcTime = jcTime;
     }
 
-    @Basic
-    @Column(name = "ifWrong")
+
     public byte getIfWrong() {
         return ifWrong;
     }

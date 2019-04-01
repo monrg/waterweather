@@ -1,13 +1,10 @@
 package com.example.waterualitymonitor.domain;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+
 import java.sql.Timestamp;
 import java.util.Objects;
 
-@Entity
+
 public class TMeteorologicalValue {
     private int meteorologicalId;
     private double a16;
@@ -19,8 +16,7 @@ public class TMeteorologicalValue {
     private double a03;
     private Timestamp time;
 
-    @Id
-    @Column(name = "meteorological_id")
+
     public int getMeteorologicalId() {
         return meteorologicalId;
     }
@@ -29,8 +25,7 @@ public class TMeteorologicalValue {
         this.meteorologicalId = meteorologicalId;
     }
 
-    @Basic
-    @Column(name = "A16")
+
     public double getA16() {
         return a16;
     }
@@ -39,8 +34,6 @@ public class TMeteorologicalValue {
         this.a16 = a16;
     }
 
-    @Basic
-    @Column(name = "A04")
     public double getA04() {
         return a04;
     }
@@ -49,8 +42,6 @@ public class TMeteorologicalValue {
         this.a04 = a04;
     }
 
-    @Basic
-    @Column(name = "A05")
     public double getA05() {
         return a05;
     }
@@ -59,8 +50,7 @@ public class TMeteorologicalValue {
         this.a05 = a05;
     }
 
-    @Basic
-    @Column(name = "A06")
+
     public double getA06() {
         return a06;
     }
@@ -69,8 +59,7 @@ public class TMeteorologicalValue {
         this.a06 = a06;
     }
 
-    @Basic
-    @Column(name = "A01")
+
     public double getA01() {
         return a01;
     }
@@ -79,8 +68,7 @@ public class TMeteorologicalValue {
         this.a01 = a01;
     }
 
-    @Basic
-    @Column(name = "A02")
+
     public double getA02() {
         return a02;
     }
@@ -89,8 +77,7 @@ public class TMeteorologicalValue {
         this.a02 = a02;
     }
 
-    @Basic
-    @Column(name = "A03")
+
     public double getA03() {
         return a03;
     }
@@ -99,8 +86,7 @@ public class TMeteorologicalValue {
         this.a03 = a03;
     }
 
-    @Basic
-    @Column(name = "time")
+
     public Timestamp getTime() {
         return time;
     }

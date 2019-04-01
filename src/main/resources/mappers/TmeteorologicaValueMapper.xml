@@ -3,13 +3,43 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.waterualitymonitor.respository.TmeteorologicaValueMapper">
-    <select id="getOne()" resultType="com.example.waterualitymonitor.domain.TMeteorologicalValue">
+    <select id="getOne" resultType="com.example.waterualitymonitor.domain.TMeteorologicalValue">
     select *from TMeteorologicalValue order by time limit 1;
     </select>
 
-    <select id="getTen()" resultType="com.example.waterualitymonitor.domain.TMeteorologicalValue">
+    <select id="getTen" resultType="com.example.waterualitymonitor.domain.TMeteorologicalValue">
     select *from TMeteorologicalValue order by time limit 0,11;
     </select>
+    <!-- List<TMeteorologicalValue> getDay(Timestamp now);
+        List<TMeteorologicalValue> getWeek(Timestamp start, Timestamp end);
+        List<TMeteorologicalValue> getMonth(Timestamp now);
+    -->
 
+
+    <select id="getDay" resultType="com.example.waterualitymonitor.domain.TMeteorologicalValue">
+    select *from TMeteorologicalValue where day ( time ) = day(#{now});
+    </select>
+
+    <select id="getWeek" resultType="com.example.waterualitymonitor.domain.TMeteorologicalValue">
+    select *from TMeteorologicalValue where time between #{start} and #{end};
+    </select>
+    <select id="getMonth" resultType="com.example.waterualitymonitor.domain.TMeteorologicalValue">
+    select *from TMeteorologicalValue where MONTH ( time ) = MONTH(#{now});
+    </select>
+
+    <!--
+      //获取一天数据并按照小时，天,周求平均值
+      List<TMeteorologicalValue> gethourAvg(Timestamp now);
+      List<TMeteorologicalValue> getDayhAvg(Timestamp now);
+      List<TMeteorologicalValue> getWeekAvg(Timestamp start, Timestamp end);-->
+    <select id="gethourAvg" resultType="com.example.waterualitymonitor.domain.TMeteorologicalValue">
+    select *from TMeteorologicalValue where hour ( time ) = hour(#{now});;
+    </select>
+    <select id="getDayhAvg" resultType="com.example.waterualitymonitor.domain.TMeteorologicalValue">
+    select *from TMeteorologicalValue where day ( time ) = day(#{now});;
+    </select>
+    <select id="getWeekAvg" resultType="com.example.waterualitymonitor.domain.TMeteorologicalValue">
+    select *from TMeteorologicalValue where day ( time ) = day(#{now});;
+    </select>
 
 </mapper>

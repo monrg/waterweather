@@ -1,12 +1,9 @@
 package com.example.waterualitymonitor.domain;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+
 import java.util.Objects;
 
-@Entity
+
 public class TAfactorManage {
     private String taFactorId;
     private String taname;
@@ -16,8 +13,6 @@ public class TAfactorManage {
     private Double effectiveValueValueLimit;
     private byte wheatherToEnable;
 
-    @Id
-    @Column(name = "TA_factor_id")
     public String getTaFactorId() {
         return taFactorId;
     }
@@ -26,8 +21,6 @@ public class TAfactorManage {
         this.taFactorId = taFactorId;
     }
 
-    @Basic
-    @Column(name = "Taname")
     public String getTaname() {
         return taname;
     }
@@ -36,8 +29,7 @@ public class TAfactorManage {
         this.taname = taname;
     }
 
-    @Basic
-    @Column(name = "stanard_up_limit")
+
     public Double getStanardUpLimit() {
         return stanardUpLimit;
     }
@@ -46,8 +38,7 @@ public class TAfactorManage {
         this.stanardUpLimit = stanardUpLimit;
     }
 
-    @Basic
-    @Column(name = "stanard_floor_limit")
+
     public Double getStanardFloorLimit() {
         return stanardFloorLimit;
     }
@@ -56,8 +47,7 @@ public class TAfactorManage {
         this.stanardFloorLimit = stanardFloorLimit;
     }
 
-    @Basic
-    @Column(name = "effective_value_up_limit")
+
     public Double getEffectiveValueUpLimit() {
         return effectiveValueUpLimit;
     }
@@ -66,8 +56,7 @@ public class TAfactorManage {
         this.effectiveValueUpLimit = effectiveValueUpLimit;
     }
 
-    @Basic
-    @Column(name = "effective_value_value_limit")
+
     public Double getEffectiveValueValueLimit() {
         return effectiveValueValueLimit;
     }
@@ -76,8 +65,7 @@ public class TAfactorManage {
         this.effectiveValueValueLimit = effectiveValueValueLimit;
     }
 
-    @Basic
-    @Column(name = "wheather_to_enable")
+
     public byte getWheatherToEnable() {
         return wheatherToEnable;
     }

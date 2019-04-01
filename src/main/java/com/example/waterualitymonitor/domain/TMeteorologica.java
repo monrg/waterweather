@@ -1,18 +1,14 @@
 package com.example.waterualitymonitor.domain;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+
 import java.util.Objects;
 
-@Entity
+
 public class TMeteorologica {
     private String meteorologicalId;
     private String meteorologicalName;
 
-    @Id
-    @Column(name = "meteorological_id")
+
     public String getMeteorologicalId() {
         return meteorologicalId;
     }
@@ -21,8 +17,7 @@ public class TMeteorologica {
         this.meteorologicalId = meteorologicalId;
     }
 
-    @Basic
-    @Column(name = "meteorological_name")
+
     public String getMeteorologicalName() {
         return meteorologicalName;
     }

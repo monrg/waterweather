@@ -5,12 +5,12 @@
 <mapper namespace="com.example.waterualitymonitor.respository.TAmonitoringMapper">
 
 
-    <select id="getOne()" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
-    select *from TAmonitoring order by time limit 1;
+    <select id="getOne" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
+    select * from TAmonitoring order by time limit 1;
     </select>
 
-    <select id="getTen()" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
-    select *from TAmonitoring order by time limt 0,11;
+    <select id="getTen" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
+    select * from TAmonitoring order by time limt 0,11;
     </select>
 <!--
 
@@ -19,14 +19,28 @@
     List<TAmonitoring> getWeek();
 
     -->
-    <select id="getDay()" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
-    select *from TAmonitoring where  day ( time ) = day(now());
+    <select id="getDay" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
+    select * from TAmonitoring where  day ( time ) = day(#{now});
     </select>
-    <select id="getWeek()" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
-    select *from TAmonitoring where  time between #{start} and #{end};
+    <select id="getWeek" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
+    select * from TAmonitoring where  time between #{start} and #{end};
     </select>
-    <select id="getMonth()" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
-    select *from TAmonitoring where  month ( time ) = month(now());
+    <select id="getMonth" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
+    select * from TAmonitoring where  month ( time ) = month(#{now});
+    </select>
+    <!--List<TAmonitoring> gethourAvg();
+    List<TAmonitoring> getDayhAvg();
+    List<TAmonitoring> getWeekAvg(Timestamp start, Timestamp end);-->
+    <!--暂停-->
+
+    <select id="gethourAvg" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
+    select * from TAmonitoring where  hour ( time ) = hour (#{now});
+    </select>
+    <select id="getWeek" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
+    select * from TAmonitoring where  time between #{start} and #{end};
+    </select>
+    <select id="getDayhAvg" resultType="com.example.waterualitymonitor.domain.TAmonitoring">
+    select * from TAmonitoring where  day ( time ) = month(now());
     </select>
 
 </mapper>

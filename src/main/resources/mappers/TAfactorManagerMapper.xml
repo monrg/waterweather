@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.waterualitymonitor.respository.TAfactorManagerMapper">
 
-    <select id="getAll()" resultType="com.example.waterualitymonitor.domain.TAfactorManage">
+    <select id="getAll" resultType="com.example.waterualitymonitor.domain.TAfactorManage">
         select * from TAfactorManage;
     </select>
 

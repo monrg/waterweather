@@ -4,11 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.waterualitymonitor.respository.TjcRecordingMapper">
 
-    <select id="getOne()" resultType="com.example.waterualitymonitor.domain.TjcRecording">
+    <select id="getOne" resultType="com.example.waterualitymonitor.domain.TjcRecording">
     select *from Tjc_recording order by time limit 1;
     </select>
 
-    <select id="getTen()" resultType="com.example.waterualitymonitor.domain.TjcRecording">
+    <select id="getTen" resultType="com.example.waterualitymonitor.domain.TjcRecording">
     select *from Tjc_recording order by time limit 0,11;
     </select>
 
@@ -18,16 +18,33 @@
     List<TjcRecording> getWeek();
     List<TjcRecording> getYear();
     -->
-    <select id="getDay()" resultType="com.example.waterualitymonitor.domain.TjcRecording">
-    select *from Tjc_recording where  day ( time ) = day(now());;
+    <select id="getDay" resultType="com.example.waterualitymonitor.domain.TjcRecording">
+    select *from Tjc_recording where  day ( time ) = day(#{now});
     </select>
 
-    <select id="getWeek()" resultType="com.example.waterualitymonitor.domain.TjcRecording">
-    select *from Tjc_recording where time between #{start} and #{end}
+    <select id="getWeek" resultType="com.example.waterualitymonitor.domain.TjcRecording">
+    select *from Tjc_recording where time between #{start} and #{end};
     </select>
 
-    <select id="getMonth()" resultType="com.example.waterualitymonitor.domain.TjcRecording">
-    select *from Tjc_recording where  MONTH ( time ) = MONTH(now());;
+    <select id="getMonth" resultType="com.example.waterualitymonitor.domain.TjcRecording">
+    select *from Tjc_recording where  MONTH ( time ) = MONTH(#{now});
+    </select>
+
+    <!--  //获取一天数据并按照小时，天,周求平均值
+    List<TjcRecording> gethourAvg();
+    List<TjcRecording> getDayhAvg();
+    List<TjcRecording> getWeekAvg(Timestamp start, Timestamp end);
+-->
+    <select id="gethourAvg" resultType="com.example.waterualitymonitor.domain.TjcRecording">
+    select *from Tjc_recording where  hour ( time ) = hour(#{now});
+    </select>
+
+    <select id="getDayhAvg" resultType="com.example.waterualitymonitor.domain.TjcRecording">
+    select *from Tjc_recording where time between #{start} and #{end};
+    </select>
+
+    <select id="getWeekAvg" resultType="com.example.waterualitymonitor.domain.TjcRecording">
+    select *from Tjc_recording where  day ( time ) = day(#{now});
     </select>
 
 

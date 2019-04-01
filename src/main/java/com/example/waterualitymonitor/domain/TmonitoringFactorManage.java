@@ -1,10 +1,8 @@
 package com.example.waterualitymonitor.domain;
 
-import javax.persistence.*;
+
 import java.util.Objects;
 
-@Entity
-@Table(name = "Tmonitoring_factorManage", schema = "WaterWeatherTable", catalog = "")
 public class TmonitoringFactorManage {
     private String tmonitoringFactorId;
     private String tmonitoringFactorName;
@@ -14,8 +12,7 @@ public class TmonitoringFactorManage {
     private Double effectiveValueValueLimit;
     private byte wheatherToEnable;
 
-    @Id
-    @Column(name = "tmonitoring_factor_id")
+
     public String getTmonitoringFactorId() {
         return tmonitoringFactorId;
     }
@@ -24,8 +21,7 @@ public class TmonitoringFactorManage {
         this.tmonitoringFactorId = tmonitoringFactorId;
     }
 
-    @Basic
-    @Column(name = "tmonitoring_factor_name")
+
     public String getTmonitoringFactorName() {
         return tmonitoringFactorName;
     }
@@ -34,8 +30,6 @@ public class TmonitoringFactorManage {
         this.tmonitoringFactorName = tmonitoringFactorName;
     }
 
-    @Basic
-    @Column(name = "stanard_up_limit")
     public Double getStanardUpLimit() {
         return stanardUpLimit;
     }
@@ -44,8 +38,6 @@ public class TmonitoringFactorManage {
         this.stanardUpLimit = stanardUpLimit;
     }
 
-    @Basic
-    @Column(name = "stanard_floor_limit")
     public Double getStanardFloorLimit() {
         return stanardFloorLimit;
     }
@@ -54,8 +46,7 @@ public class TmonitoringFactorManage {
         this.stanardFloorLimit = stanardFloorLimit;
     }
 
-    @Basic
-    @Column(name = "effective_value_up_limit")
+
     public Double getEffectiveValueUpLimit() {
         return effectiveValueUpLimit;
     }
@@ -64,8 +55,7 @@ public class TmonitoringFactorManage {
         this.effectiveValueUpLimit = effectiveValueUpLimit;
     }
 
-    @Basic
-    @Column(name = "effective_value_value_limit")
+
     public Double getEffectiveValueValueLimit() {
         return effectiveValueValueLimit;
     }
@@ -74,8 +64,6 @@ public class TmonitoringFactorManage {
         this.effectiveValueValueLimit = effectiveValueValueLimit;
     }
 
-    @Basic
-    @Column(name = "wheather_to_enable")
     public byte getWheatherToEnable() {
         return wheatherToEnable;
     }

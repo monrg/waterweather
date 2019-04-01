@@ -12,9 +12,16 @@ public interface TmeteorologicaValueMapper {
     TMeteorologicalValue getOne();
     List<TMeteorologicalValue> getTen();
 
-    List<TMeteorologicalValue> getDAy();
+    List<TMeteorologicalValue> getDay(Timestamp now);
     List<TMeteorologicalValue> getWeek(Timestamp start, Timestamp end);
-    List<TMeteorologicalValue> getMonth();
+    List<TMeteorologicalValue> getMonth(Timestamp now);
+
+
+    //获取一天数据并按照小时，天,周求平均值
+    List<TMeteorologicalValue> gethourAvg(Timestamp now);
+    List<TMeteorologicalValue> getDayhAvg(Timestamp now);
+    List<TMeteorologicalValue> getWeekAvg(Timestamp start, Timestamp end);
+
 
 
 

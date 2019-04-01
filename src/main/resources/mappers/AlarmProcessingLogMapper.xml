@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.waterualitymonitor.respository.AlarmProcessingLogMapper">
+
+    <insert id="insertAlarmProcessLog" parameterMap="com.example.waterualitymonitor.domain.AlarmProcessingLogEntity" useGeneratedKeys="true" keyProperty="alarmProcessId">
+        insert into WaterWeatherTable.alarm_processing_log(monitor_factor_id, proces_time, process_mode, handler, process_progress, process_detail)
+        values (#{monitorFactorId},#{procesTime},#{processMode},#{handler},#{processProgress},#{processDetail})
+    </insert>
+
+    <!--通过检测因子查询？本条需要完善-->
+    <select id="selectByMonitor" parameterMap=""></select>
+
+    //处理时间的类型需要改一下否则无法根据时间进行查询
+    <select id="selectByProcessTime" parameterMap="java.time.LocalDateTime" resultType="com.example.waterualitymonitor.domain.AlarmProcessingLogEntity">
+      select * from WaterWeatherTable.alarm_processing_log
+      where proces_time between #{start} and #{end}
+    </select>
+
+    <select id="selectByHandler" parameterMap="java.lang.String" resultMap="com.example.waterualitymonitor.domain.AlarmProcessingLogEntity">
+        select * from WaterWeatherTable.alarm_processing_log
+        where handler = #{handlerName}
+    </select>
+</mapper>

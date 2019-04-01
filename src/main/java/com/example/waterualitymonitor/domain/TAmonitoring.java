@@ -1,13 +1,10 @@
 package com.example.waterualitymonitor.domain;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+
 import java.sql.Timestamp;
 import java.util.Objects;
 
-@Entity
+
 public class TAmonitoring {
     private int taId;
     private double ta00;
@@ -29,8 +26,6 @@ public class TAmonitoring {
     private Timestamp time;
     private Byte isWrong;
 
-    @Id
-    @Column(name = "TA_id")
     public int getTaId() {
         return taId;
     }
@@ -39,8 +34,7 @@ public class TAmonitoring {
         this.taId = taId;
     }
 
-    @Basic
-    @Column(name = "TA00")
+
     public double getTa00() {
         return ta00;
     }
@@ -49,8 +43,7 @@ public class TAmonitoring {
         this.ta00 = ta00;
     }
 
-    @Basic
-    @Column(name = "TA01")
+
     public double getTa01() {
         return ta01;
     }
@@ -59,8 +52,7 @@ public class TAmonitoring {
         this.ta01 = ta01;
     }
 
-    @Basic
-    @Column(name = "TA02")
+
     public double getTa02() {
         return ta02;
     }
@@ -69,8 +61,7 @@ public class TAmonitoring {
         this.ta02 = ta02;
     }
 
-    @Basic
-    @Column(name = "TA03")
+
     public double getTa03() {
         return ta03;
     }
@@ -79,8 +70,7 @@ public class TAmonitoring {
         this.ta03 = ta03;
     }
 
-    @Basic
-    @Column(name = "TA04")
+
     public double getTa04() {
         return ta04;
     }
@@ -89,8 +79,7 @@ public class TAmonitoring {
         this.ta04 = ta04;
     }
 
-    @Basic
-    @Column(name = "TA05")
+
     public double getTa05() {
         return ta05;
     }
@@ -99,8 +88,6 @@ public class TAmonitoring {
         this.ta05 = ta05;
     }
 
-    @Basic
-    @Column(name = "TA06")
     public double getTa06() {
         return ta06;
     }
@@ -109,8 +96,7 @@ public class TAmonitoring {
         this.ta06 = ta06;
     }
 
-    @Basic
-    @Column(name = "TA07")
+
     public double getTa07() {
         return ta07;
     }
@@ -119,8 +105,7 @@ public class TAmonitoring {
         this.ta07 = ta07;
     }
 
-    @Basic
-    @Column(name = "TA08")
+
     public double getTa08() {
         return ta08;
     }
@@ -129,8 +114,6 @@ public class TAmonitoring {
         this.ta08 = ta08;
     }
 
-    @Basic
-    @Column(name = "TA09")
     public double getTa09() {
         return ta09;
     }
@@ -139,8 +122,7 @@ public class TAmonitoring {
         this.ta09 = ta09;
     }
 
-    @Basic
-    @Column(name = "TA10")
+
     public double getTa10() {
         return ta10;
     }
@@ -149,8 +131,6 @@ public class TAmonitoring {
         this.ta10 = ta10;
     }
 
-    @Basic
-    @Column(name = "TA11")
     public double getTa11() {
         return ta11;
     }
@@ -159,8 +139,7 @@ public class TAmonitoring {
         this.ta11 = ta11;
     }
 
-    @Basic
-    @Column(name = "TA12")
+
     public double getTa12() {
         return ta12;
     }
@@ -169,8 +148,7 @@ public class TAmonitoring {
         this.ta12 = ta12;
     }
 
-    @Basic
-    @Column(name = "TA13")
+
     public double getTa13() {
         return ta13;
     }
@@ -179,8 +157,7 @@ public class TAmonitoring {
         this.ta13 = ta13;
     }
 
-    @Basic
-    @Column(name = "TA14")
+
     public double getTa14() {
         return ta14;
     }
@@ -189,8 +166,7 @@ public class TAmonitoring {
         this.ta14 = ta14;
     }
 
-    @Basic
-    @Column(name = "TA15")
+
     public double getTa15() {
         return ta15;
     }
@@ -199,8 +175,6 @@ public class TAmonitoring {
         this.ta15 = ta15;
     }
 
-    @Basic
-    @Column(name = "time")
     public Timestamp getTime() {
         return time;
     }
@@ -209,8 +183,7 @@ public class TAmonitoring {
         this.time = time;
     }
 
-    @Basic
-    @Column(name = "isWrong")
+
     public Byte getIsWrong() {
         return isWrong;
     }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.waterualitymonitor.respository.AlarmImformationMapper">
+    <resultMap id="rmAlarmImformation" type="com.example.watermonitor.entity.AlarmTypeEntity">
+        <id property="alarmImformationId" column="alarm_imformation_id"/>
+        <result property="monitorFactor" column="monitor_factor"/>
+        <result property="alarmTypeId" column="alarm_type_id"/>
+        <result property="alarmTime" column="alarm_time"/>
+        <result property="standardLimit" column="standard_limit"/>
+        <result property="effectiveRange" column="effective_range"/>
+        <result property="actualValue" column="actual_value"/>
+    </resultMap>
+
+</mapper>

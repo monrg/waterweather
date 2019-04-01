@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.waterualitymonitor.respository.AlarmTypeMapper">
+    <resultMap id="alarmTypeResultMap" type="com.example.waterualitymonitor.domain.AlarmTypeEntity">
+        <id property="alarmTypeId" column="alarm_type_id"></id>
+        <result property="earlyWarning" column="early_warning" ></result>
+        <result property="overproof" column="overproof" ></result>
+        <result property="invalidData" column="invalid_data" ></result>
+        <result property="missData" column="miss_data" ></result>
+    </resultMap>
+
+    <insert id="addAlarmType" parameterType="com.example.waterualitymonitor.domain.AlarmTypeEntity" useGeneratedKeys="true" keyProperty="alarmTypeId">
+        insert into WaterWeatherTable.AlarmType(early_warning, overproof, invalid_data, miss_data)
+        values (#{alarmTypeId},#{earlyWarning},#{overproof},#{invalidData},#{missData})
+    </insert>
+
+    <delete id="deleteAlarmTypeById" parameterType="java.lang.Integer">
+        delete from WaterWeatherTable.AlarmType
+        where alarm_type_id = #{alarmTypeId}
+    </delete>
+
+    <select id="selectAllAlarmType" resultMap="alarmTypeResultMap">
+        select * from WaterWeatherTable.AlarmType
+    </select>
+</mapper>
